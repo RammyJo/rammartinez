@@ -128,6 +128,76 @@
     @media(max-width:760px){.skip-link{left:10px;top:8px}}
     @media(prefers-reduced-motion:reduce){.signal-track{animation:none}.cursor-aura{display:none}.reveal{opacity:1;transform:none;transition:none}.strip-card,.story-card,.work-card,.skill-card,.feature-card,.floating-label{transition:none}}
 
+  
+    /* EXPLORATION UPDATE: make every page easy to find and navigate */
+    .explore-launcher{position:fixed;right:max(22px,env(safe-area-inset-right));bottom:calc(22px + env(safe-area-inset-bottom));z-index:80;display:inline-flex;align-items:center;gap:10px;padding:12px 15px;border:1px solid rgba(255,192,174,.38);border-radius:100px;background:rgba(20,24,33,.94);color:var(--paper);box-shadow:0 12px 40px rgba(0,0,0,.28),0 0 30px rgba(255,116,92,.08);backdrop-filter:blur(16px);cursor:pointer;font-size:11px;font-weight:800;letter-spacing:.03em;transition:transform .22s,border-color .22s,background .22s}
+    .explore-launcher:hover{transform:translateY(-3px);border-color:var(--accent2);background:#1a1f2a}
+    .explore-launcher svg{width:17px;height:17px;fill:none;stroke:var(--accent2);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+    .explore-launcher-hint{font:9px "DM Mono",monospace;letter-spacing:.1em;color:#979eaa;border-left:1px solid var(--line);padding-left:9px}
+    .explore-dialog{width:min(820px,calc(100vw - 32px));max-width:none;max-height:calc(100svh - 32px);padding:0;border:0;margin:auto;background:transparent;color:var(--paper);overflow:visible}
+    .explore-dialog::backdrop{background:rgba(5,7,11,.78);backdrop-filter:blur(10px)}
+    .explore-panel{max-height:calc(100svh - 32px);overflow:auto;border:1px solid rgba(255,192,174,.22);border-radius:25px;padding:clamp(22px,4vw,38px);background:radial-gradient(ellipse at 100% 0,rgba(255,116,92,.12),transparent 45%),linear-gradient(145deg,#171c27,#0e1118);box-shadow:0 35px 110px rgba(0,0,0,.55)}
+    .explore-dialog-top{display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .explore-dialog-top .eyebrow{margin:0}
+    .explore-close{flex:0 0 auto;width:39px;height:39px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;background:rgba(255,255,255,.025);color:var(--paper);font-size:25px;line-height:1;cursor:pointer;transition:background .2s,border-color .2s}
+    .explore-close:hover{background:rgba(255,116,92,.12);border-color:var(--accent2)}
+    .explore-dialog-intro{margin:23px 0 26px}
+    .explore-dialog-intro h2{font-size:clamp(34px,5vw,52px);margin-bottom:10px}
+    .explore-dialog-intro p{max-width:580px;margin:0;color:#aeb5bf;font-size:13px}
+    .explore-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+    .explore-option{display:flex;align-items:center;gap:13px;min-width:0;padding:17px 15px;border:1px solid rgba(244,241,233,.11);border-radius:15px;background:rgba(255,255,255,.025);transition:background .2s,border-color .2s,transform .2s}
+    .explore-option:hover,.explore-option[aria-current="page"]{background:rgba(255,116,92,.075);border-color:rgba(255,192,174,.4);transform:translateY(-2px)}
+    .explore-option[aria-current="page"] .explore-option-copy strong::after{content:"  ·  YOU ARE HERE";font:8px "DM Mono",monospace;color:var(--accent2);letter-spacing:.08em;white-space:nowrap}
+    .explore-option-number{flex:0 0 24px;color:var(--accent2);font-size:9px}
+    .explore-option-copy{display:grid;gap:4px;min-width:0;flex:1}
+    .explore-option-copy strong{font-size:12px;font-weight:750}
+    .explore-option-copy small{color:#9ca4af;font-size:10px;line-height:1.6}
+    .explore-option-arrow{color:var(--accent2);font-size:17px;transition:transform .2s}
+    .explore-option:hover .explore-option-arrow{transform:translate(2px,-2px)}
+    .explore-dialog-foot{border-top:1px solid var(--line);margin:23px 0 0;padding-top:15px;color:#8c939e;font-size:9px}
+    .explore-home-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin:20px 0 19px}
+    .explore-home-heading .eyebrow{margin-bottom:12px}
+    .explore-home-heading h2{font-size:clamp(32px,4.4vw,48px);margin:0 0 10px}
+    .explore-home-heading p:not(.eyebrow){color:#9fa6b1;font-size:12px;line-height:1.75;margin:0}
+    .explore-inline{flex:0 0 auto;border:1px solid rgba(255,192,174,.27);border-radius:100px;padding:11px 14px;background:rgba(255,116,92,.04);cursor:pointer}
+    .explore-inline:hover{background:rgba(255,116,92,.1)}
+    .feature-strip{grid-template-columns:repeat(6,minmax(0,1fr));gap:13px;margin-top:0}
+    .feature-strip .strip-card{grid-column:span 2;display:flex;flex-direction:column;align-items:flex-start;min-width:0;text-align:left;position:relative;min-height:174px;padding:20px}
+    .feature-strip .strip-card:nth-child(4),.feature-strip .strip-card:nth-child(5){grid-column:span 3}
+    .feature-strip .strip-card h3{font-size:18px}
+    .feature-strip .strip-card p{font-size:11px}
+    .strip-card-link{display:inline-flex;gap:8px;align-items:center;margin-top:auto;padding-top:14px;color:var(--accent2);font-size:10px;font-weight:750}
+    .feature-strip .strip-card:hover .strip-card-link{color:#ffe0d5}
+    @media(max-width:760px){
+      .explore-launcher{right:12px;bottom:calc(13px + env(safe-area-inset-bottom));padding:11px 13px}
+      .explore-launcher-hint{display:none}
+      .explore-dialog{width:calc(100vw - 22px);max-height:calc(100svh - 22px)}
+      .explore-panel{max-height:calc(100svh - 22px);padding:22px 18px;border-radius:21px}
+      .explore-dialog-intro{margin:17px 0 19px}
+      .explore-grid{gap:9px}
+      .explore-option{padding:14px 11px;gap:9px}
+      .explore-option-number{flex-basis:19px}
+      .explore-option-copy strong{font-size:11px}
+      .explore-option-copy small{font-size:10px}
+      .explore-home-heading{align-items:flex-start;flex-direction:column;gap:15px;margin-top:10px}
+      .explore-inline{align-self:flex-start}
+      .feature-strip{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+      .feature-strip .strip-card,.feature-strip .strip-card:nth-child(4),.feature-strip .strip-card:nth-child(5){grid-column:span 1;min-height:160px;padding:16px}
+      .feature-strip .strip-card h3{font-size:16px}
+      .feature-strip .strip-card p{font-size:11px}
+      .feature-strip .strip-card:nth-child(5){grid-column:1/-1;min-height:125px}
+    }
+    @media(max-width:420px){
+      .explore-grid{grid-template-columns:1fr}
+      .explore-option{padding:12px}
+      .feature-strip{grid-template-columns:1fr}
+      .feature-strip .strip-card,.feature-strip .strip-card:nth-child(4),.feature-strip .strip-card:nth-child(5){grid-column:auto;min-height:0}
+      .feature-strip .strip-card:nth-child(5){min-height:0}
+      .feature-strip .strip-card p{font-size:12px}
+      .explore-launcher{right:10px;bottom:calc(10px + env(safe-area-inset-bottom))}
+    }
+    @media(prefers-reduced-motion:reduce){.explore-launcher,.explore-option,.explore-close{transition:none}}
+
   </style>
 </head>
 <body>
@@ -151,6 +221,34 @@
       </nav>
     </div>
   </header>
+
+  <button class="explore-launcher" id="explore-launcher" type="button" aria-haspopup="dialog" aria-controls="explore-dialog" aria-expanded="false">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"></circle><path d="M14.8 9.2 13 13l-3.8 1.8L11 11z"></path></svg>
+    <span>Explore</span>
+    <span class="explore-launcher-hint" aria-hidden="true">PAGES</span>
+  </button>
+
+  <dialog class="explore-dialog" id="explore-dialog" aria-labelledby="explore-title">
+    <div class="explore-panel">
+      <div class="explore-dialog-top">
+        <p class="eyebrow mono">A quick map of the site</p>
+        <button class="explore-close" id="explore-close" type="button" aria-label="Close explore menu">×</button>
+      </div>
+      <div class="explore-dialog-intro">
+        <h2 id="explore-title">Where would you like to <span class="accent">go?</span></h2>
+        <p>Choose a page. You can always open this map again from the Explore button.</p>
+      </div>
+      <nav class="explore-grid" aria-label="Explore pages">
+        <a class="explore-option" href="#/home" data-route="home"><span class="explore-option-number mono">00</span><span class="explore-option-copy"><strong>Home</strong><small>Start with the big picture.</small></span><span class="explore-option-arrow" aria-hidden="true">↗</span></a>
+        <a class="explore-option" href="#/get-to-know-me" data-route="get-to-know-me"><span class="explore-option-number mono">01</span><span class="explore-option-copy"><strong>Get to know me</strong><small>My story, family, and priorities.</small></span><span class="explore-option-arrow" aria-hidden="true">↗</span></a>
+        <a class="explore-option" href="#/work" data-route="work"><span class="explore-option-number mono">02</span><span class="explore-option-copy"><strong>My work</strong><small>Projects, experiments, and ideas.</small></span><span class="explore-option-arrow" aria-hidden="true">↗</span></a>
+        <a class="explore-option" href="#/ministry" data-route="ministry"><span class="explore-option-number mono">03</span><span class="explore-option-copy"><strong>Faith & ministry</strong><small>How I serve and what grounds me.</small></span><span class="explore-option-arrow" aria-hidden="true">↗</span></a>
+        <a class="explore-option" href="#/skills" data-route="skills"><span class="explore-option-number mono">04</span><span class="explore-option-copy"><strong>Skills & talents</strong><small>What I bring and keep learning.</small></span><span class="explore-option-arrow" aria-hidden="true">↗</span></a>
+        <a class="explore-option" href="#/contact" data-route="contact"><span class="explore-option-number mono">05</span><span class="explore-option-copy"><strong>Let's talk</strong><small>Connect and explore an idea together.</small></span><span class="explore-option-arrow" aria-hidden="true">↗</span></a>
+      </nav>
+      <p class="explore-dialog-foot mono">GOD FIRST · FAITHFUL IN EVERYTHING</p>
+    </div>
+  </dialog>
 
   <main id="page-content" tabindex="-1">
     <!-- PAGE 00: HOME -->
@@ -188,10 +286,21 @@
         <p class="sr-only">God first. Family. Ministry. Work. Learn. Build. Serve.</p>
         <div class="signal-track" aria-hidden="true"><div class="signal-group"><span>GOD FIRST</span><i>/</i><span>FAMILY</span><i>/</i><span>MINISTRY</span><i>/</i><span>LEARN</span><i>/</i><span>BUILD</span><i>/</i><span>SERVE</span><i>/</i></div><div class="signal-group"><span>GOD FIRST</span><i>/</i><span>FAMILY</span><i>/</i><span>MINISTRY</span><i>/</i><span>LEARN</span><i>/</i><span>BUILD</span><i>/</i><span>SERVE</span><i>/</i></div></div>
       </div>
-      <div class="container"><div class="feature-strip">
+      <div class="container">
+        <div class="explore-home-heading">
+          <div>
+            <p class="eyebrow mono">Take a closer look</p>
+            <h2>Explore my world<span class="accent">.</span></h2>
+            <p>Choose what interests you. There's no need to follow a set order.</p>
+          </div>
+          <button type="button" class="text-link explore-inline" data-open-explore>Browse all pages <span aria-hidden="true">↗</span></button>
+        </div>
+        <div class="feature-strip">
         <a class="strip-card" href="#/get-to-know-me"><span class="mono">01 / The person</span><h3>Life beyond a résumé.</h3><p>Meet the husband, father, friend, and learner behind the work.</p></a>
         <a class="strip-card" href="#/ministry"><span class="mono">02 / The purpose</span><h3>Faith that becomes service.</h3><p>My church life, serving roles, and the young men I disciple.</p></a>
-        <a class="strip-card" href="#/work"><span class="mono">03 / The projects</span><h3>Ideas made tangible.</h3><p>Websites, systems, operations, and digital experiments.</p></a>
+        <a class="strip-card" href="#/work"><span class="mono">03 / The projects</span><h3>Ideas made tangible.</h3><p>Websites, systems, operations, and digital experiments.</p><span class="strip-card-link" aria-hidden="true">Explore projects ↗</span></a>
+        <a class="strip-card" href="#/skills"><span class="mono">04 / What I bring</span><h3>Skills & talents.</h3><p>My strengths, creative abilities, and love of learning.</p><span class="strip-card-link" aria-hidden="true">Explore skills ↗</span></a>
+        <a class="strip-card" href="#/contact"><span class="mono">05 / The next chapter</span><h3>Let's talk.</h3><p>Start a conversation about an idea, project, or collaboration.</p><span class="strip-card-link" aria-hidden="true">Get in touch ↗</span></a>
       </div></div>
     </section>
 
@@ -310,6 +419,9 @@
       const navLinks = [...document.querySelectorAll('[data-route]')];
       const menuButton = document.querySelector('.menu-toggle');
       const nav = document.querySelector('#main-nav');
+      const exploreLauncher = document.querySelector('#explore-launcher');
+      const exploreDialog = document.querySelector('#explore-dialog');
+      const exploreClose = document.querySelector('#explore-close');
       const progressBar = document.querySelector('#reading-progress-bar');
       const pageTitles = {
         home: 'Ram Martinez — Built with Purpose',
@@ -328,6 +440,20 @@
         nav.classList.remove('open');
         menuButton.setAttribute('aria-expanded', 'false');
         menuButton.innerHTML = '<span aria-hidden="true">≡</span> MENU';
+      }
+
+      function closeExplore(restoreFocus = false) {
+        if (exploreDialog.open) exploreDialog.close();
+        exploreLauncher.setAttribute('aria-expanded', 'false');
+        if (restoreFocus) exploreLauncher.focus({ preventScroll: true });
+      }
+
+      function openExplore() {
+        closeMenu();
+        if (!exploreDialog.open) exploreDialog.showModal();
+        exploreLauncher.setAttribute('aria-expanded', 'true');
+        const currentLink = exploreDialog.querySelector('[aria-current="page"]');
+        (currentLink || exploreClose).focus({ preventScroll: true });
       }
 
       function updateReadingProgress() {
@@ -362,6 +488,7 @@
         document.title = pageTitles[nextPage] || pageTitles.home;
         document.body.dataset.currentPage = nextPage;
         closeMenu();
+        closeExplore(false);
 
         if (options.scroll !== false) {
           window.scrollTo({ top: 0, behavior: reduceMotion.matches ? 'auto' : 'smooth' });
@@ -403,7 +530,18 @@
         nav.classList.toggle('open', !open);
         menuButton.innerHTML = open ? '<span aria-hidden="true">≡</span> MENU' : '<span aria-hidden="true">×</span> CLOSE';
       });
+      exploreLauncher.addEventListener('click', openExplore);
+      exploreClose.addEventListener('click', () => closeExplore(true));
+      exploreDialog.addEventListener('click', event => {
+        if (event.target === exploreDialog) closeExplore(true);
+      });
+      document.querySelectorAll('[data-open-explore]').forEach(button => button.addEventListener('click', openExplore));
       document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && exploreDialog.open) {
+          event.preventDefault();
+          closeExplore(true);
+          return;
+        }
         if (event.key === 'Escape' && menuButton.getAttribute('aria-expanded') === 'true') {
           closeMenu();
           menuButton.focus();
