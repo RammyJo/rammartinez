@@ -198,7 +198,51 @@
     }
     @media(prefers-reduced-motion:reduce){.explore-launcher,.explore-option,.explore-close{transition:none}}
 
-  </style>
+  
+/* Paintit-inspired refresh v2 */
+:root{--ink:#080b0b;--ink2:#101616;--card:#121c1a;--paper:#f7faf8;--muted:#a9b8b3;--line:rgba(247,250,248,.15);--accent:#00ffc3;--accent2:#8fffe8;--mint:#00ffc3;color-scheme:dark}
+body{background:#080b0b}
+.site-header{background:rgba(8,11,11,.92);border-bottom-color:rgba(0,255,195,.18)}
+.brand-mark{border-color:var(--accent);border-radius:50%;color:var(--accent);background:rgba(0,255,195,.07)}
+.nav-links a:hover,.nav-links a[aria-current="page"]{color:var(--accent)}
+.nav-cta{border-color:rgba(0,255,195,.45)}
+.nav-cta:hover{background:var(--accent);color:#06110e!important;border-color:var(--accent)}
+.eyebrow,.text-link{color:var(--accent)}
+.eyebrow::before{background:var(--accent)}
+.button-primary{background:var(--accent);color:#06110e;border-color:var(--accent)}
+.button-primary:hover{background:#8fffe8;border-color:#8fffe8}
+.button-secondary:hover{border-color:var(--accent);color:var(--accent)}
+h1 .accent,h2 .accent{color:var(--accent)}
+h1 .stroke{-webkit-text-stroke-color:rgba(0,255,195,.8)}
+.hero{background:radial-gradient(ellipse at 78% 45%,rgba(0,255,195,.10),transparent 44%)}
+.availability{border-color:rgba(0,255,195,.25);background:rgba(0,255,195,.045)}
+.availability-dot{background:var(--accent);box-shadow:0 0 0 4px rgba(0,255,195,.12)}
+.art-grid{background-image:linear-gradient(rgba(0,255,195,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(0,255,195,.12) 1px,transparent 1px)}
+.orbit::after{border-color:rgba(0,255,195,.3)}
+.orbit-node{background:var(--accent);box-shadow:0 0 22px rgba(0,255,195,.6)}
+.feature-card{border-color:rgba(0,255,195,.3);background:linear-gradient(145deg,rgba(20,35,32,.98),rgba(10,19,17,.98));transform:rotate(-2deg)}
+.card-mark,.work-card-mark{color:var(--accent);border-color:rgba(0,255,195,.28);background:rgba(0,255,195,.08)}
+.floating-label{border-color:rgba(0,255,195,.2)}
+.tiny-cross::before,.tiny-cross::after{background:var(--accent)}
+.mini-tag{border-color:rgba(0,255,195,.2)}
+.strip-card,.story-card,.interest-card,.work-card,.ministry-item,.skill-card{transition:border-color .22s ease,transform .22s ease,background .22s ease}
+.strip-card:hover,.story-card:hover,.interest-card:hover{border-color:rgba(0,255,195,.32)}
+.story-card::after{border-color:rgba(0,255,195,.14);box-shadow:0 0 0 22px rgba(0,255,195,.025),0 0 0 46px rgba(0,255,195,.015)}
+.pull-quote em,.quote-credit,.story-number,.strip-card .mono,.interest-card .interest-index,.priority-number{color:var(--accent)}
+.identity-panel{border-color:rgba(0,255,195,.28);background:linear-gradient(145deg,#14231f,#0b1110)}
+.identity-panel::before{border-color:rgba(0,255,195,.24);box-shadow:0 0 0 28px rgba(0,255,195,.035),0 0 0 60px rgba(0,255,195,.02)}
+.identity-monogram{color:var(--accent)}
+.life-compass{border-color:rgba(0,255,195,.28);background:linear-gradient(145deg,rgba(0,255,195,.075),rgba(255,255,255,.018))}
+.priority-item{background:rgba(0,255,195,.025)}
+.interest-card.featured-learning{border-color:rgba(0,255,195,.32);background:linear-gradient(120deg,rgba(0,255,195,.08),rgba(255,255,255,.018))}
+.work-card:hover{border-color:rgba(0,255,195,.48)}
+.status-label::before{background:var(--accent)}
+.next-page .next-arrow{border-color:rgba(0,255,195,.28)}
+.next-page a:hover .next-arrow{border-color:var(--accent);color:var(--accent)}
+::selection{background:var(--accent);color:#06110e}
+@media(max-width:760px){.hero{background:radial-gradient(ellipse at 70% 70%,rgba(0,255,195,.09),transparent 48%)}}
+
+</style>
 </head>
 <body>
   <a class="skip-link" href="#page-content">Skip to content</a>
