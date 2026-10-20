@@ -284,27 +284,28 @@
     .hero-title{font-size:clamp(54px,8.6vw,120px);line-height:.88;letter-spacing:-.055em;font-weight:500;margin-bottom:26px}
     .hero-copy > .eyebrow{display:flex;margin-bottom:20px}
     .hero-title .line{display:block;overflow:hidden;padding-bottom:.14em;margin-bottom:-.14em}
-    .hero-title .line>span{display:block;transition:transform 1.05s var(--ease);transition-delay:calc(.12s + var(--l,0)*.09s)}
-    /* Hidden only when JS is running and the entrance has not been triggered yet. */
-    .js .hero-title .line>span{transform:translateY(112%)}
-    .js.hero-go .hero-title .line>span{transform:none}
+    .hero-title .line>span{display:block}
     .hero-title em{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.02em;color:var(--ink)}
     .hero-title .mint{position:relative;color:var(--accent);display:inline-block}
     .hero-title .line>span.mint{display:inline-block}
-    .hero-title .mint::after{content:"";position:absolute;left:0;right:0;bottom:.045em;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform 1.1s var(--ease) 1s;opacity:.65}
-    .js.hero-go .hero-title .mint::after{transform:scaleX(1)}
+    .hero-title .mint::after{content:"";position:absolute;left:0;right:0;bottom:.045em;height:2px;background:var(--accent);transform:scaleX(1);transform-origin:left;opacity:.65}
     .hero-lede{max-width:53ch;color:var(--ink-soft);font-size:clamp(14.5px,1.35vw,17px);line-height:1.8;margin-bottom:26px}
     .hero-lede strong{color:var(--ink);font-weight:600}
     .hero-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
     .hero-note{display:flex;align-items:center;gap:12px;margin-top:26px;color:var(--muted);font-size:11.5px}
     .hero-note i{width:34px;height:1px;background:var(--line-strong);flex:0 0 auto}
-    .hero-fade{transition:opacity .9s var(--ease),transform .9s var(--ease)}
-    .js .hero-fade{opacity:0;transform:translateY(16px)}
-    .js.hero-go .hero-fade{opacity:1;transform:none}
-    .js.hero-go .hero-fade.d1{transition-delay:.3s}
-    .js.hero-go .hero-fade.d2{transition-delay:.42s}
-    .js.hero-go .hero-fade.d3{transition-delay:.54s}
-    .js.hero-go .hero-fade.d4{transition-delay:.66s}
+
+    /* Entrance runs only when .hero-go is set — with no class, everything stays visible. */
+    @keyframes line-rise{from{transform:translateY(112%)}to{transform:none}}
+    @keyframes fade-rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+    @keyframes underline-draw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+    .js.hero-go .hero-title .line>span{animation:line-rise 1.05s var(--ease) both;animation-delay:calc(.12s + var(--l,0)*.09s)}
+    .js.hero-go .hero-title .mint::after{animation:underline-draw 1.1s var(--ease) 1s both}
+    .js.hero-go .hero-fade{animation:fade-rise .9s var(--ease) both}
+    .js.hero-go .hero-fade.d1{animation-delay:.3s}
+    .js.hero-go .hero-fade.d2{animation-delay:.42s}
+    .js.hero-go .hero-fade.d3{animation-delay:.54s}
+    .js.hero-go .hero-fade.d4{animation-delay:.66s}
 
     /* hero art */
     .hero-art{position:relative;min-height:clamp(420px,42vw,540px);display:grid;place-items:center;perspective:1200px;will-change:transform}
@@ -1329,16 +1330,10 @@
         setTimeout(revealSite, 2000);
       }
 
-      /* ---------------- hero replay ---------------- */
+      /* ---------------- hero entrance ---------------- */
       function playHero() {
-        const home = $('.page[data-page="home"]');
-        if (!home) return;
-        root.classList.remove('hero-go');
-        void home.offsetWidth;
-        requestAnimationFrame(() => root.classList.add('hero-go'));
+        root.classList.add('hero-go');
       }
-      // Failsafe: never let the entrance animation strand the hero off-screen.
-      setTimeout(() => root.classList.add('hero-go'), 2600);
 
       /* ---------------- page swap ---------------- */
       function swap(route, { focus = false } = {}) {
