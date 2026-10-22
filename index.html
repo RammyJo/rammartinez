@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#070a09">
+  <meta name="theme-color" content="#05081f">
   <meta name="description" content="Ram Martinez — husband, father, servant in ministry, and curious builder. Faith, family, ministry, and work, in that order.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Ram Martinez — Built with Purpose">
@@ -12,7 +12,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="color-scheme" content="dark light">
   <title>Ram Martinez — Built with Purpose</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23080B09'/%3E%3Ccircle cx='32' cy='32' r='19' fill='none' stroke='%235BF2B4' stroke-width='2'/%3E%3Ctext x='32' y='39' font-family='Arial' font-size='17' font-weight='700' fill='%235BF2B4' text-anchor='middle'%3ERM%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='1' x2='1' y2='0'%3E%3Cstop stop-color='%2322d3ee'/%3E%3Cstop offset='.5' stop-color='%234d7cff'/%3E%3Cstop offset='1' stop-color='%23a855f7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='%2305081f'/%3E%3Cellipse cx='32' cy='32' rx='23' ry='9' transform='rotate(-22 32 32)' fill='none' stroke='url(%23g)' stroke-width='2.5'/%3E%3Ctext x='32' y='42' font-family='Arial' font-size='26' font-weight='700' fill='url(%23g)' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,300..800;1,300..800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -22,20 +22,23 @@
        TOKENS
        ============================================================ */
     :root{
-      --bg:#070a09;
-      --bg-soft:#0a0f0d;
-      --bg-elev:#0d1311;
-      --ink:#f1f5f1;
-      --ink-soft:#c3cdc7;
-      --muted:#8b9a93;
-      --line:rgba(241,245,241,.10);
-      --line-strong:rgba(241,245,241,.20);
-      --accent:#5bf2b4;
-      --accent-soft:#b9ffe0;
-      --accent-ink:#04120c;
-      --glass:rgba(255,255,255,.035);
-      --glass-strong:rgba(255,255,255,.06);
-      --shadow:0 40px 120px rgba(0,0,0,.55);
+      --bg:#05081f;
+      --bg-soft:#070b2a;
+      --bg-elev:#0a0f33;
+      --ink:#f2f5ff;
+      --ink-soft:#c2c9e8;
+      --muted:#8590b8;
+      --line:rgba(150,170,255,.13);
+      --line-strong:rgba(150,170,255,.25);
+      --accent:#6f9bff;
+      --accent-2:#22d3ee;
+      --accent-3:#b06cff;
+      --accent-soft:#b9c6ff;
+      --accent-ink:#03061a;
+      --grad:linear-gradient(100deg,#22d3ee 0%,#4d7cff 46%,#a855f7 100%);
+      --glass:rgba(120,160,255,.05);
+      --glass-strong:rgba(120,160,255,.09);
+      --shadow:0 40px 120px rgba(0,0,0,.6);
       --max:1320px;
       --gutter:clamp(22px,5vw,72px);
       --r-sm:14px;
@@ -49,20 +52,23 @@
       color-scheme:dark;
     }
     html[data-theme="light"]{
-      --bg:#f2f0e9;
-      --bg-soft:#eae8e0;
-      --bg-elev:#fbfaf6;
-      --ink:#0a100d;
-      --ink-soft:#2b3631;
-      --muted:#5f6d66;
-      --line:rgba(10,16,13,.12);
-      --line-strong:rgba(10,16,13,.24);
-      --accent:#0a8a5f;
-      --accent-soft:#0f6b4a;
-      --accent-ink:#f4fff9;
-      --glass:rgba(10,16,13,.035);
-      --glass-strong:rgba(10,16,13,.06);
-      --shadow:0 40px 120px rgba(20,40,32,.16);
+      --bg:#f1f4ff;
+      --bg-soft:#e7ecfd;
+      --bg-elev:#ffffff;
+      --ink:#070c28;
+      --ink-soft:#28325a;
+      --muted:#5a6488;
+      --line:rgba(12,20,70,.12);
+      --line-strong:rgba(12,20,70,.24);
+      --accent:#2447d8;
+      --accent-2:#0891b2;
+      --accent-3:#7c3aed;
+      --accent-soft:#1e40ff;
+      --accent-ink:#ffffff;
+      --grad:linear-gradient(100deg,#0e7490 0%,#1d4ed8 48%,#7c3aed 100%);
+      --glass:rgba(12,20,70,.035);
+      --glass-strong:rgba(12,20,70,.06);
+      --shadow:0 40px 120px rgba(20,30,80,.16);
       color-scheme:light;
     }
 
@@ -99,17 +105,23 @@
     .sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 
     .eyebrow{display:inline-flex;align-items:center;gap:12px;font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
-    .eyebrow::before{content:"";width:26px;height:1px;background:var(--accent);flex:0 0 auto}
+    .eyebrow::before{content:"";width:26px;height:1px;background:var(--grad);flex:0 0 auto}
 
     /* ============================================================
        ATMOSPHERE
        ============================================================ */
     .atmosphere{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+    .atmosphere::before{content:"";position:absolute;inset:-24% -12% auto;height:78vh;
+      background:
+        radial-gradient(ellipse 52% 62% at 72% 8%,rgba(77,124,255,.20),transparent 62%),
+        radial-gradient(ellipse 44% 54% at 16% 0%,rgba(168,85,247,.15),transparent 62%),
+        radial-gradient(ellipse 34% 40% at 96% 44%,rgba(34,211,238,.10),transparent 64%);
+      filter:blur(18px)}
     .blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.5;will-change:transform}
-    .blob-a{width:52vw;height:52vw;max-width:780px;max-height:780px;top:-18vw;right:-12vw;background:radial-gradient(circle,color-mix(in srgb,var(--accent) 26%,transparent),transparent 68%);animation:drift-a 26s ease-in-out infinite alternate}
-    .blob-b{width:40vw;height:40vw;max-width:600px;max-height:600px;bottom:-14vw;left:-10vw;background:radial-gradient(circle,color-mix(in srgb,var(--accent) 13%,transparent),transparent 70%);animation:drift-b 32s ease-in-out infinite alternate}
-    .blob-c{width:30vw;height:30vw;max-width:460px;max-height:460px;top:42%;left:46%;background:radial-gradient(circle,rgba(120,140,255,.10),transparent 70%);animation:drift-c 38s ease-in-out infinite alternate}
-    html[data-theme="light"] .blob{opacity:.32}
+    .blob-a{width:52vw;height:52vw;max-width:780px;max-height:780px;top:-18vw;right:-12vw;background:radial-gradient(circle,rgba(77,124,255,.34),transparent 68%);animation:drift-a 26s ease-in-out infinite alternate}
+    .blob-b{width:40vw;height:40vw;max-width:600px;max-height:600px;bottom:-14vw;left:-10vw;background:radial-gradient(circle,rgba(168,85,247,.26),transparent 70%);animation:drift-b 32s ease-in-out infinite alternate}
+    .blob-c{width:30vw;height:30vw;max-width:460px;max-height:460px;top:42%;left:46%;background:radial-gradient(circle,rgba(34,211,238,.13),transparent 70%);animation:drift-c 38s ease-in-out infinite alternate}
+    html[data-theme="light"] .blob{opacity:.38}
     @keyframes drift-a{to{transform:translate3d(-6%,10%,0) scale(1.12)}}
     @keyframes drift-b{to{transform:translate3d(8%,-8%,0) scale(1.08)}}
     @keyframes drift-c{to{transform:translate3d(-10%,-12%,0) scale(1.18)}}
@@ -159,8 +171,10 @@
     .site-header.is-scrolled{background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);border-bottom-color:var(--line)}
     .nav-wrap{height:78px;display:flex;align-items:center;justify-content:space-between;gap:22px}
     .brand{display:inline-flex;align-items:center;gap:12px;flex-shrink:0;position:relative;z-index:2}
-    .brand-mark{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;border:1px solid color-mix(in srgb,var(--accent) 55%,transparent);color:var(--accent);font-family:var(--mono);font-size:12px;letter-spacing:.04em;background:color-mix(in srgb,var(--accent) 7%,transparent);transition:transform .5s var(--ease),background .3s}
-    .brand:hover .brand-mark{transform:rotate(-12deg) scale(1.06);background:color-mix(in srgb,var(--accent) 16%,transparent)}
+    .brand-mark{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;border:1px solid color-mix(in srgb,var(--accent) 38%,transparent);background:radial-gradient(circle at 32% 22%,rgba(77,124,255,.22),rgba(168,85,247,.10) 55%,transparent 75%),rgba(255,255,255,.02);transition:transform .5s var(--ease),border-color .3s,box-shadow .4s}
+    .brand-mark svg{width:28px;height:28px;overflow:visible}
+    .brand:hover .brand-mark{transform:rotate(-14deg) scale(1.06);border-color:color-mix(in srgb,var(--accent) 70%,transparent);box-shadow:0 8px 28px rgba(61,110,255,.35)}
+    html[data-theme="light"] .brand-mark{background:radial-gradient(circle at 32% 22%,rgba(77,124,255,.12),rgba(168,85,247,.07) 55%,transparent 75%),#fff}
     .brand-text{display:grid;gap:2px}
     .brand-name{font-size:12.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
     .brand-sub{font-family:var(--mono);font-size:8.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
@@ -320,12 +334,15 @@
     .orbit::after{inset:27%;border-color:color-mix(in srgb,var(--accent) 24%,transparent);border-style:dashed;animation:spin 28s linear infinite reverse}
     .orbit i{position:absolute;width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 20px color-mix(in srgb,var(--accent) 80%,transparent);top:10%;left:28%}
     .orbit i:last-child{width:5px;height:5px;top:auto;left:auto;bottom:12%;right:22%;opacity:.7}
+    /* the orbital swoosh from the mark */
+    .ribbon-front{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:128%;height:auto;pointer-events:none;overflow:visible;opacity:.6;mix-blend-mode:screen}
+    html[data-theme="light"] .ribbon-front{opacity:.45;mix-blend-mode:multiply}
     @keyframes spin{to{transform:rotate(360deg)}}
     .glow{position:absolute;width:70%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--accent) 16%,transparent),transparent 65%);filter:blur(30px);animation:breathe 8s ease-in-out infinite}
     @keyframes breathe{0%,100%{transform:scale(1);opacity:.7}50%{transform:scale(1.12);opacity:1}}
 
     .glass-card{position:relative;z-index:2;width:min(88%,410px);padding:clamp(24px,3vw,34px);border-radius:26px;border:1px solid color-mix(in srgb,var(--ink) 16%,transparent);background:linear-gradient(155deg,color-mix(in srgb,var(--bg-elev) 96%,transparent),color-mix(in srgb,var(--bg) 92%,transparent));box-shadow:0 40px 100px rgba(0,0,0,.45),inset 0 1px rgba(255,255,255,.06);transform:translateZ(40px)}
-    html[data-theme="light"] .glass-card{box-shadow:0 40px 90px rgba(30,60,45,.16),inset 0 1px rgba(255,255,255,.8)}
+    html[data-theme="light"] .glass-card{box-shadow:0 40px 90px rgba(30,50,120,.16),inset 0 1px rgba(255,255,255,.8)}
     .card-top{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:30px}
     .card-mark{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;border:1px solid color-mix(in srgb,var(--accent) 40%,transparent);color:var(--accent);font-family:var(--serif);font-style:italic;font-size:18px;background:color-mix(in srgb,var(--accent) 8%,transparent)}
     .glass-card h2{font-size:clamp(27px,3.1vw,38px);line-height:1.04;margin-bottom:14px}
@@ -335,10 +352,12 @@
     .card-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:16px;font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
     .pips{display:flex;gap:4px}
     .pips span{width:5px;height:5px;border-radius:50%;background:var(--accent)}
+    .pips span:nth-child(1){background:var(--accent-2)}
+    .pips span:nth-child(3){background:var(--accent-3)}
     .pips span:nth-child(2){opacity:.6}.pips span:nth-child(3){opacity:.3}
 
     .float-chip{position:absolute;z-index:3;display:grid;gap:3px;padding:11px 15px;border-radius:13px;border:1px solid var(--line-strong);background:color-mix(in srgb,var(--bg-elev) 92%,transparent);backdrop-filter:blur(12px);box-shadow:0 18px 44px rgba(0,0,0,.3);animation:float 7s ease-in-out infinite}
-    html[data-theme="light"] .float-chip{box-shadow:0 18px 40px rgba(30,60,45,.14)}
+    html[data-theme="light"] .float-chip{box-shadow:0 18px 40px rgba(30,50,120,.14)}
     .float-chip .mono{font-size:8px;letter-spacing:.18em;color:var(--muted)}
     .float-chip strong{font-size:11.5px;font-weight:500;display:flex;align-items:center;gap:6px}
     .chip-a{top:4%;right:-2%;animation-delay:-2s;transform:translateZ(70px)}
@@ -578,8 +597,25 @@
     .footer-nav a{font-size:12px;color:var(--ink-soft);transition:color .25s}
     .footer-nav a:hover{color:var(--accent)}
     .footer-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding:20px 0 26px;border-top:1px solid var(--line);font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-    .wordmark{font-size:clamp(50px,12.4vw,180px);line-height:.92;letter-spacing:-.06em;font-weight:500;text-align:center;color:transparent;-webkit-text-stroke:1px color-mix(in srgb,var(--ink) 16%,transparent);user-select:none;white-space:nowrap;padding-bottom:clamp(12px,2vw,26px)}
+    .wordmark{font-size:clamp(50px,12.4vw,180px);line-height:.92;letter-spacing:-.06em;font-weight:500;text-align:center;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;opacity:.15;user-select:none;white-space:nowrap;padding-bottom:clamp(12px,2vw,26px)}
+    html[data-theme="light"] .wordmark{opacity:.13}
     .footer-bottom a:hover{color:var(--accent)}
+
+    /* ============================================================
+       BRAND GRADIENT — cyan → blue → violet
+       ============================================================ */
+    .accent,.hero-title .mint,.cta-band h2 em,.ministry-main h2 em,.contact-panel h2 em,.monogram,.big-stat,.loader-mark,.grad-text{
+      background:var(--grad);
+      -webkit-background-clip:text;background-clip:text;
+      color:transparent;-webkit-text-fill-color:transparent;
+    }
+    .hero-title .mint::after{background:var(--grad)}
+    .btn-primary{background:var(--grad);color:#fff;box-shadow:0 14px 38px rgba(60,110,255,.35)}
+    .btn-primary:hover{box-shadow:0 20px 52px rgba(96,86,255,.45)}
+    .filter[aria-pressed="true"]{background:var(--grad);border-color:transparent;color:#fff}
+    .nav-cta:hover{background:var(--grad);border-color:transparent;color:#fff}
+    .path-card:hover .path-arrow,.feature-row:hover .fg,.next:hover .circle,.work-card:hover .work-go{background:var(--grad);border-color:transparent;color:#fff}
+    .progress span{background:var(--grad)}
 
     /* ============================================================
        RESPONSIVE
@@ -700,7 +736,18 @@
   <header class="site-header" id="site-header">
     <div class="container nav-wrap">
       <a class="brand" href="#/home" aria-label="Ram Martinez — home">
-        <span class="brand-mark">RM</span>
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none">
+            <defs>
+              <linearGradient id="bm-g1" x1="5" y1="28" x2="28" y2="4" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#22d3ee"/><stop offset=".48" stop-color="#4d7cff"/><stop offset="1" stop-color="#a855f7"/>
+              </linearGradient>
+            </defs>
+            <ellipse cx="16" cy="16.2" rx="13.4" ry="5.4" transform="rotate(-22 16 16.2)" stroke="url(#bm-g1)" stroke-width="1.25" opacity=".9"/>
+            <path d="M10.6 24.6V7.6h5.1a4.75 4.75 0 0 1 0 9.5h-5.1" stroke="url(#bm-g1)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M16.3 17.4 22.4 24.6" stroke="url(#bm-g1)" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </span>
         <span class="brand-text">
           <span class="brand-name">Ram Martinez</span>
           <span class="brand-sub">Built with purpose</span>
@@ -807,6 +854,15 @@
                 <div class="card-rule"></div>
                 <div class="card-foot"><span>A work in progress</span><span class="pips" aria-hidden="true"><span></span><span></span><span></span></span></div>
               </div>
+              <svg class="ribbon-front" viewBox="0 0 620 320" aria-hidden="true">
+                <defs>
+                  <linearGradient id="orb-fg" x1="10" y1="300" x2="610" y2="60" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#22d3ee"/><stop offset=".5" stop-color="#4d7cff"/><stop offset="1" stop-color="#a855f7"/>
+                  </linearGradient>
+                </defs>
+                <path d="M6 196 C 150 292, 470 292, 614 172" fill="none" stroke="url(#orb-fg)" stroke-width="12" opacity=".10" stroke-linecap="round"/>
+                <path d="M6 196 C 150 292, 470 292, 614 172" fill="none" stroke="url(#orb-fg)" stroke-width="2.4" stroke-linecap="round"/>
+              </svg>
               <div class="float-chip chip-a">
                 <span class="mono">The foundation</span>
                 <strong><span class="cross" aria-hidden="true"></span>Faith that shapes the work</strong>
@@ -1254,7 +1310,18 @@
       <div class="footer-top">
         <div class="footer-brand">
           <a class="brand" href="#/home" aria-label="Ram Martinez — home">
-            <span class="brand-mark">RM</span>
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none">
+                <defs>
+                  <linearGradient id="bm-g2" x1="5" y1="28" x2="28" y2="4" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#22d3ee"/><stop offset=".48" stop-color="#4d7cff"/><stop offset="1" stop-color="#a855f7"/>
+                  </linearGradient>
+                </defs>
+                <ellipse cx="16" cy="16.2" rx="13.4" ry="5.4" transform="rotate(-22 16 16.2)" stroke="url(#bm-g2)" stroke-width="1.25" opacity=".9"/>
+                <path d="M10.6 24.6V7.6h5.1a4.75 4.75 0 0 1 0 9.5h-5.1" stroke="url(#bm-g2)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16.3 17.4 22.4 24.6" stroke="url(#bm-g2)" stroke-width="2.5" stroke-linecap="round"/>
+              </svg>
+            </span>
             <span class="brand-text"><span class="brand-name">Ram Martinez</span><span class="brand-sub">Built with purpose</span></span>
           </a>
           <p>A husband, father, servant, and builder — learning to put God first in everything.</p>
@@ -1486,7 +1553,7 @@
       const applyTheme = theme => {
         root.dataset.theme = theme;
         themeToggle.setAttribute('aria-pressed', String(theme === 'light'));
-        if (themeMeta) themeMeta.setAttribute('content', theme === 'light' ? '#f2f0e9' : '#070a09');
+        if (themeMeta) themeMeta.setAttribute('content', theme === 'light' ? '#f1f4ff' : '#05081f');
       };
       if (storedTheme === 'light' || storedTheme === 'dark') applyTheme(storedTheme);
       themeToggle.addEventListener('click', () => {
@@ -1669,7 +1736,14 @@
         const hero = canvas.parentElement;
         let w = 0, h = 0, dpr = 1, points = [], raf = 0, visible = true;
         const mouse = { x: -9999, y: -9999 };
-        const accent = () => getComputedStyle(root).getPropertyValue('--accent').trim() || '#5bf2b4';
+        const palette = () => {
+          const cs = getComputedStyle(root);
+          return [
+            cs.getPropertyValue('--accent-2').trim() || '#22d3ee',
+            cs.getPropertyValue('--accent').trim() || '#4d7cff',
+            cs.getPropertyValue('--accent-3').trim() || '#a855f7'
+          ];
+        };
 
         function build() {
           const rect = canvas.getBoundingClientRect();
@@ -1680,17 +1754,19 @@
           canvas.height = Math.round(h * dpr);
           ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
           const count = Math.round(Math.min(58, Math.max(22, (w * h) / 30000)));
-          points = Array.from({ length: count }, () => ({
+          points = Array.from({ length: count }, (_, i) => ({
             x: Math.random() * w,
             y: Math.random() * h,
             vx: (Math.random() - 0.5) * 0.24,
             vy: (Math.random() - 0.5) * 0.24,
-            r: Math.random() * 1.5 + 0.7
+            r: Math.random() * 1.5 + 0.7,
+            c: i % 3
           }));
         }
 
         function frame() {
-          const col = accent();
+          const pal = palette();
+          const line = pal[1];
           ctx.clearRect(0, 0, w, h);
           for (const p of points) {
             p.x += p.vx;
@@ -1711,7 +1787,7 @@
               const d = Math.hypot(a.x - b.x, a.y - b.y);
               if (d < 132) {
                 ctx.globalAlpha = (1 - d / 132) * 0.28;
-                ctx.strokeStyle = col;
+                ctx.strokeStyle = line;
                 ctx.beginPath();
                 ctx.moveTo(a.x, a.y);
                 ctx.lineTo(b.x, b.y);
@@ -1719,9 +1795,9 @@
               }
             }
           }
-          ctx.globalAlpha = 0.75;
-          ctx.fillStyle = col;
+          ctx.globalAlpha = 0.8;
           for (const p of points) {
+            ctx.fillStyle = pal[p.c];
             ctx.beginPath();
             ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
             ctx.fill();
