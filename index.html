@@ -512,6 +512,9 @@
     .filter[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
     .work-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
     .work-card{display:flex;flex-direction:column;min-height:268px;padding:clamp(22px,2.6vw,30px);border-radius:var(--r);border:1px solid var(--line);background:linear-gradient(160deg,var(--glass),transparent 58%);position:relative;overflow:hidden;transition:transform .45s var(--ease),border-color .35s,background .35s}
+    a.work-card{cursor:pointer}
+    .work-card.is-plain{cursor:default}
+    .work-card.is-plain:hover{transform:none}
     .work-card:hover{transform:translateY(-5px);border-color:color-mix(in srgb,var(--accent) 32%,transparent);background:linear-gradient(160deg,color-mix(in srgb,var(--accent) 4%,transparent),transparent 60%)}
     .work-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:28px}
     .work-top .mono{font-size:8.5px;color:var(--muted)}
@@ -950,7 +953,7 @@
               <p class="eyebrow" data-reveal>Selected work</p>
               <h2 data-reveal style="--i:1">A few things I've <em>built.</em></h2>
             </div>
-            <a class="btn btn-ghost magnetic" href="#/work" data-reveal style="--i:2">See all nine projects <span class="arw" aria-hidden="true">↗</span></a>
+            <a class="btn btn-ghost magnetic" href="#/work" data-reveal style="--i:2">See all eleven projects <span class="arw" aria-hidden="true">↗</span></a>
           </div>
 
           <div class="feature-list">
@@ -960,22 +963,22 @@
               <span class="fc">E-commerce · Web</span>
               <span class="fg" aria-hidden="true">↗</span>
             </a>
-            <a class="feature-row" href="https://cd-architectural-design-services.pages.dev" target="_blank" rel="noopener noreferrer" data-reveal>
+            <a class="feature-row" href="https://steward-organizer.pages.dev" target="_blank" rel="noopener noreferrer" data-reveal>
               <span class="fi">02</span>
-              <h3>C + D <em>Architectural</em></h3>
-              <span class="fc">Business website</span>
-              <span class="fg" aria-hidden="true">↗</span>
-            </a>
-            <a class="feature-row" href="#/work" data-reveal>
-              <span class="fi">03</span>
               <h3>Church <em>Operations</em></h3>
-              <span class="fc">Church operations</span>
+              <span class="fc">Steward web app</span>
               <span class="fg" aria-hidden="true">↗</span>
             </a>
-            <a class="feature-row" href="#/work" data-reveal>
+            <a class="feature-row" href="https://kelstine-book-of-blessings.ram-a15.workers.dev" target="_blank" rel="noopener noreferrer" data-reveal>
+              <span class="fi">03</span>
+              <h3>Book of <em>Blessings</em></h3>
+              <span class="fc">Keepsake web app</span>
+              <span class="fg" aria-hidden="true">↗</span>
+            </a>
+            <a class="feature-row" href="https://chessunited.pages.dev" target="_blank" rel="noopener noreferrer" data-reveal>
               <span class="fi">04</span>
-              <h3>First Things <em>First</em></h3>
-              <span class="fc">Personal productivity</span>
+              <h3>Chess <em>United</em></h3>
+              <span class="fc">Community website</span>
               <span class="fg" aria-hidden="true">↗</span>
             </a>
           </div>
@@ -1129,68 +1132,82 @@
         </div>
 
         <div class="work-grid" id="work-grid">
-          <article class="work-card" data-cat="web" data-reveal data-spotlight style="--i:0">
+          <a class="work-card" href="https://pitotesting.ram-a15.workers.dev" target="_blank" rel="noopener noreferrer" data-cat="web" data-reveal data-spotlight style="--i:0">
             <div class="work-top"><span class="mono">01 / E-commerce · Web</span><span class="work-mark">7</span></div>
             <h2>Seven Perfume</h2>
-            <p>A custom storefront concept for a fragrance brand, focused on a clean product experience, mobile-friendly shopping, product sizes, shipping choices, and a distinctive black-and-white visual identity.</p>
-            <div class="work-foot"><span class="status">Storefront prototype</span><a class="work-go" href="https://pitotesting.ram-a15.workers.dev" target="_blank" rel="noopener noreferrer" aria-label="Open Seven Perfume prototype">↗</a></div>
-          </article>
+            <p>A custom storefront for a fragrance brand, focused on a clean product experience, mobile-friendly shopping, product sizes, shipping choices, and a distinctive black-and-white visual identity.</p>
+            <div class="work-foot"><span class="status">Live storefront</span><span class="work-go" aria-hidden="true">↗</span></div>
+          </a>
 
-          <article class="work-card" data-cat="ops web" data-reveal data-spotlight style="--i:1">
-            <div class="work-top"><span class="mono">02 / Church operations</span><span class="work-mark">CO</span></div>
-            <h2>Church Operations Organizer</h2>
-            <p>A digital workspace concept for pastors and ministry leaders to organize responsibilities, coordinate teams, and keep church operations easier to follow, with a calm, readable interface built around real ministry needs.</p>
-            <div class="work-foot"><span class="status">In development</span><span class="work-go is-static" aria-hidden="true">↗</span></div>
-          </article>
+          <a class="work-card" href="https://steward-organizer.pages.dev" target="_blank" rel="noopener noreferrer" data-cat="ops web" data-reveal data-spotlight style="--i:1">
+            <div class="work-top"><span class="mono">02 / Church operations</span><span class="work-mark">SO</span></div>
+            <h2>Steward — Church Operations Organizer</h2>
+            <p>A digital workspace for pastors and ministry leaders to organize responsibilities, coordinate teams, and keep church operations easier to follow, with a calm, readable interface built around real ministry needs.</p>
+            <div class="work-foot"><span class="status">Live web app</span><span class="work-go" aria-hidden="true">↗</span></div>
+          </a>
 
-          <article class="work-card" data-cat="ops web" data-reveal data-spotlight style="--i:2">
-            <div class="work-top"><span class="mono">03 / Canteen · Finance</span><span class="work-mark">CG</span></div>
-            <h2>CanteenGo</h2>
-            <p>A canteen management web app concept designed to make selling and auditing easier, with clearer transaction records and a more practical workflow for sellers and auditors.</p>
-            <div class="work-foot"><span class="status">Prototype project</span><a class="work-go" href="https://github.com/RammyJo/canteengo" target="_blank" rel="noopener noreferrer" aria-label="View CanteenGo repository">↗</a></div>
-          </article>
+          <a class="work-card" href="https://chessunited.pages.dev" target="_blank" rel="noopener noreferrer" data-cat="web" data-reveal data-spotlight style="--i:2">
+            <div class="work-top"><span class="mono">03 / Community · Web</span><span class="work-mark">CU</span></div>
+            <h2>Chess United</h2>
+            <p>The official website for Chess United, a community chess club in San Fernando City, La Union. Built with Astro around club identity, events, and an easy way for players to find their way in.</p>
+            <div class="work-foot"><span class="status">Live website</span><span class="work-go" aria-hidden="true">↗</span></div>
+          </a>
 
-          <article class="work-card" data-cat="ops tech" data-reveal data-spotlight style="--i:3">
-            <div class="work-top"><span class="mono">04 / Personal productivity</span><span class="work-mark">FTF</span></div>
-            <h2>First Things First</h2>
-            <p>A devotional-focused app concept that helps users put time with God first by scheduling devotional sessions and blocking selected distracting apps until the session is completed. The Android app is being developed alongside a separate browser-extension version.</p>
-            <div class="work-foot"><span class="status">In development</span><span class="work-go is-static" aria-hidden="true">↗</span></div>
-          </article>
+          <a class="work-card" href="https://dentacure-dental-clinic.pages.dev" target="_blank" rel="noopener noreferrer" data-cat="web" data-reveal data-spotlight style="--i:3">
+            <div class="work-top"><span class="mono">04 / Clinic · Web</span><span class="work-mark">DC</span></div>
+            <h2>Denta Cure Dental Clinic</h2>
+            <p>The website for Denta Cure Dental Clinic in San Fernando City, La Union: services, clinic information, and appointment intent presented in a way that feels clean and trustworthy for patients.</p>
+            <div class="work-foot"><span class="status">Live website</span><span class="work-go" aria-hidden="true">↗</span></div>
+          </a>
 
-          <article class="work-card" data-cat="web" data-reveal data-spotlight style="--i:4">
-            <div class="work-top"><span class="mono">05 / Business website</span><span class="work-mark">OB</span></div>
-            <h2>ORAS BPO Website Redesign</h2>
-            <p>A refreshed website direction for a remote-assistant and business-process outsourcing company, keeping the brand's green identity while making its services clearer, the presentation more polished, and the experience easier to navigate.</p>
-            <div class="work-foot"><span class="status">Design concept</span><span class="work-go is-static" aria-hidden="true">↗</span></div>
-          </article>
+          <a class="work-card" href="https://unas-petshop.pages.dev" target="_blank" rel="noopener noreferrer" data-cat="web" data-reveal data-spotlight style="--i:4">
+            <div class="work-top"><span class="mono">05 / Retail · Web</span><span class="work-mark">UP</span></div>
+            <h2>Una's Petshop</h2>
+            <p>A warm, product-forward website for a pet shop in San Fernando, La Union, built to make the shop easier to find and its goods easier to browse on a phone.</p>
+            <div class="work-foot"><span class="status">Live website</span><span class="work-go" aria-hidden="true">↗</span></div>
+          </a>
 
-          <article class="work-card" data-cat="web" data-reveal data-spotlight style="--i:5">
-            <div class="work-top"><span class="mono">06 / Architecture · Business website</span><span class="work-mark">C+D</span></div>
-            <h2>C + D Architectural Design Services</h2>
-            <p>A professional website for an architectural design business, with a minimalist visual identity, mobile-friendly navigation, and a client inquiry flow for sharing project requirements and inspiration images.</p>
-            <div class="work-foot"><span class="status">Live website</span><a class="work-go" href="https://cd-architectural-design-services.pages.dev" target="_blank" rel="noopener noreferrer" aria-label="Open C plus D Architectural Design Services website">↗</a></div>
-          </article>
+          <a class="work-card" href="https://kelstine-book-of-blessings.ram-a15.workers.dev" target="_blank" rel="noopener noreferrer" data-cat="web tech" data-reveal data-spotlight style="--i:5">
+            <div class="work-top"><span class="mono">06 / Keepsake · Web app</span><span class="work-mark">BB</span></div>
+            <h2>The Book of Blessings</h2>
+            <p>A shared keepsake book where people can write and read blessings, backed by a database and its own AI helper worker — the first of my sites with a real backend behind it.</p>
+            <div class="work-foot"><span class="status">Live web app</span><span class="work-go" aria-hidden="true">↗</span></div>
+          </a>
 
-          <article class="work-card" data-cat="music web" data-reveal data-spotlight style="--i:6">
-            <div class="work-top"><span class="mono">07 / Music utility</span><span class="work-mark">CF</span></div>
+          <a class="work-card" href="https://adventures-of-pebbles.ram-a15.workers.dev" target="_blank" rel="noopener noreferrer" data-cat="web" data-reveal data-spotlight style="--i:6">
+            <div class="work-top"><span class="mono">07 / Writing · Web</span><span class="work-mark">AP</span></div>
+            <h2>Adventures of Pebbles</h2>
+            <p>A quiet online journal for poetry, stories, and reflections, built as a fast static site with a soft reading experience made for long visits rather than scrolling.</p>
+            <div class="work-foot"><span class="status">Live website</span><span class="work-go" aria-hidden="true">↗</span></div>
+          </a>
+
+          <a class="work-card" href="https://rammyjo.github.io/Chord-Formatter/" target="_blank" rel="noopener noreferrer" data-cat="music web" data-reveal data-spotlight style="--i:7">
+            <div class="work-top"><span class="mono">08 / Music utility</span><span class="work-mark">CF</span></div>
             <h2>Chord Formatter</h2>
-            <p>A small browser-based tool from my ongoing experiments: a practical utility for formatting chord sheets, built around getting a focused task done without unnecessary complexity.</p>
-            <div class="work-foot"><span class="status">Published project</span><a class="work-go" href="https://rammyjo.github.io/Chord-Formatter/" target="_blank" rel="noopener noreferrer" aria-label="Open Chord Formatter">↗</a></div>
+            <p>A small browser-based tool I built for my worship team: format chord sheets quickly and cleanly, getting one focused task done without unnecessary complexity.</p>
+            <div class="work-foot"><span class="status">Live tool</span><span class="work-go" aria-hidden="true">↗</span></div>
+          </a>
+
+          <article class="work-card is-plain" data-cat="tech" data-reveal data-spotlight style="--i:8">
+            <div class="work-top"><span class="mono">09 / Personal productivity</span><span class="work-mark">FTF</span></div>
+            <h2>First Things First</h2>
+            <p>A devotional-focused app that helps users put time with God first by scheduling devotional sessions and blocking selected distracting apps until the session is completed. The Android app is being developed alongside a separate browser-extension version.</p>
+            <div class="work-foot"><span class="status">In development</span><span class="work-go is-static" aria-hidden="true">↗</span></div>
           </article>
 
-          <article class="work-card" data-cat="tech" data-reveal data-spotlight style="--i:7">
-            <div class="work-top"><span class="mono">08 / Networking · IT</span><span class="work-mark">IT</span></div>
+          <article class="work-card is-plain" data-cat="tech ops" data-reveal data-spotlight style="--i:9">
+            <div class="work-top"><span class="mono">10 / Networking · IT</span><span class="work-mark">IT</span></div>
             <h2>Church Network Improvements</h2>
             <p>Hands-on network troubleshooting and configuration work involving pfSense, dual-WAN failover and load balancing, traffic limits, and monitoring, with a focus on improving reliability while keeping the existing school network usable.</p>
             <div class="work-foot"><span class="status">Ongoing technical work</span><span class="work-go is-static" aria-hidden="true">↗</span></div>
           </article>
 
-          <article class="work-card" data-cat="web" data-reveal data-spotlight style="--i:8">
-            <div class="work-top"><span class="mono">09 / Web · Personal</span><span class="work-mark">RM</span></div>
+          <a class="work-card" href="https://rammyjo.github.io/rammartinez/" target="_blank" rel="noopener noreferrer" data-cat="web" data-reveal data-spotlight style="--i:10">
+            <div class="work-top"><span class="mono">11 / Web · Personal</span><span class="work-mark">RM</span></div>
             <h2>Ram Martinez — Built with Purpose</h2>
             <p>This portfolio itself: a page-based introduction to my faith, family, ministry, skills, and projects, designed to feel personal rather than like a generic résumé.</p>
-            <div class="work-foot"><span class="status">Personal website</span><a class="work-go" href="https://github.com/RammyJo/rammartinez" target="_blank" rel="noopener noreferrer" aria-label="View personal website source">↗</a></div>
-          </article>
+            <div class="work-foot"><span class="status">Personal website</span><span class="work-go" aria-hidden="true">↗</span></div>
+          </a>
         </div>
 
         <a class="next" href="#/ministry">
