@@ -12,7 +12,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="color-scheme" content="dark light">
   <title>Ram Martinez — Built with Purpose</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='1' x2='1' y2='0'%3E%3Cstop stop-color='%2322d3ee'/%3E%3Cstop offset='.5' stop-color='%234d7cff'/%3E%3Cstop offset='1' stop-color='%23a855f7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='%2305081f'/%3E%3Cellipse cx='32' cy='32' rx='23' ry='9' transform='rotate(-22 32 32)' fill='none' stroke='url(%23g)' stroke-width='2.5'/%3E%3Ctext x='32' y='42' font-family='Arial' font-size='26' font-weight='700' fill='url(%23g)' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="assets/first-things-first-icon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,300..800;1,300..800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -170,14 +170,9 @@
     .site-header{position:sticky;top:0;z-index:120;border-bottom:1px solid transparent;transition:background .35s,border-color .35s,backdrop-filter .35s}
     .site-header.is-scrolled{background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);border-bottom-color:var(--line)}
     .nav-wrap{height:78px;display:flex;align-items:center;justify-content:space-between;gap:22px}
-    .brand{display:inline-flex;align-items:center;gap:12px;flex-shrink:0;position:relative;z-index:2}
-    .brand-mark{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;border:1px solid color-mix(in srgb,var(--accent) 38%,transparent);background:radial-gradient(circle at 32% 22%,rgba(77,124,255,.22),rgba(168,85,247,.10) 55%,transparent 75%),rgba(255,255,255,.02);transition:transform .5s var(--ease),border-color .3s,box-shadow .4s}
-    .brand-mark svg{width:28px;height:28px;overflow:visible}
-    .brand:hover .brand-mark{transform:rotate(-14deg) scale(1.06);border-color:color-mix(in srgb,var(--accent) 70%,transparent);box-shadow:0 8px 28px rgba(61,110,255,.35)}
-    html[data-theme="light"] .brand-mark{background:radial-gradient(circle at 32% 22%,rgba(77,124,255,.12),rgba(168,85,247,.07) 55%,transparent 75%),#fff}
-    .brand-text{display:grid;gap:2px}
-    .brand-name{font-size:12.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
-    .brand-sub{font-family:var(--mono);font-size:8.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+    .brand{display:inline-flex;min-width:0;position:relative;z-index:2}
+    .brand-logo{display:block;width:210px;max-width:100%;height:auto;filter:invert(1)}
+    html[data-theme="light"] .brand-logo{filter:none}
     .nav-links{display:flex;align-items:center;gap:clamp(14px,2vw,30px)}
     .nav-link{position:relative;font-size:12.5px;color:var(--ink-soft);padding:6px 0;transition:color .25s;white-space:nowrap}
     .nav-link::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:right;transition:transform .45s var(--ease)}
@@ -658,7 +653,7 @@
     @media(max-width:640px){
       :root{--gutter:18px}
       .nav-wrap{height:68px}
-      .brand-sub{display:none}
+      .brand-logo{width:clamp(140px,44vw,190px)}
       .nav-cta{display:none}
       .hero-title{font-size:clamp(46px,13vw,72px)}
       .hero-art{min-height:360px}
@@ -736,25 +731,22 @@
   <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
   <div class="veil" id="veil" aria-hidden="true"><span class="veil-label" id="veil-label"></span></div>
 
+  <!-- Use the artwork's luminance as opacity to remove its cream background. -->
+  <svg width="0" height="0" aria-hidden="true" style="position:absolute">
+    <filter id="brand-ink" color-interpolation-filters="sRGB">
+      <feColorMatrix type="matrix" values="0 0 0 0 0
+                                           0 0 0 0 0
+                                           0 0 0 0 0
+                                           -.253 -.844 -.085 0 1.115"/>
+    </filter>
+  </svg>
+
   <header class="site-header" id="site-header">
     <div class="container nav-wrap">
-      <a class="brand" href="#/home" aria-label="Ram Martinez — home">
-        <span class="brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 32 32" fill="none">
-            <defs>
-              <linearGradient id="bm-g1" x1="5" y1="28" x2="28" y2="4" gradientUnits="userSpaceOnUse">
-                <stop stop-color="#22d3ee"/><stop offset=".48" stop-color="#4d7cff"/><stop offset="1" stop-color="#a855f7"/>
-              </linearGradient>
-            </defs>
-            <ellipse cx="16" cy="16.2" rx="13.4" ry="5.4" transform="rotate(-22 16 16.2)" stroke="url(#bm-g1)" stroke-width="1.25" opacity=".9"/>
-            <path d="M10.6 24.6V7.6h5.1a4.75 4.75 0 0 1 0 9.5h-5.1" stroke="url(#bm-g1)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M16.3 17.4 22.4 24.6" stroke="url(#bm-g1)" stroke-width="2.5" stroke-linecap="round"/>
-          </svg>
-        </span>
-        <span class="brand-text">
-          <span class="brand-name">Ram Martinez</span>
-          <span class="brand-sub">Built with purpose</span>
-        </span>
+      <a class="brand" href="#/home" aria-label="First Things First Digital Solutions — home">
+        <svg class="brand-logo" viewBox="144 296 1400 334" width="1400" height="334" aria-hidden="true">
+          <image href="assets/first-things-first.png" width="1672" height="941" preserveAspectRatio="none" filter="url(#brand-ink)"/>
+        </svg>
       </a>
 
       <nav class="nav-links" aria-label="Main navigation">
@@ -1326,20 +1318,10 @@
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
-          <a class="brand" href="#/home" aria-label="Ram Martinez — home">
-            <span class="brand-mark" aria-hidden="true">
-              <svg viewBox="0 0 32 32" fill="none">
-                <defs>
-                  <linearGradient id="bm-g2" x1="5" y1="28" x2="28" y2="4" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#22d3ee"/><stop offset=".48" stop-color="#4d7cff"/><stop offset="1" stop-color="#a855f7"/>
-                  </linearGradient>
-                </defs>
-                <ellipse cx="16" cy="16.2" rx="13.4" ry="5.4" transform="rotate(-22 16 16.2)" stroke="url(#bm-g2)" stroke-width="1.25" opacity=".9"/>
-                <path d="M10.6 24.6V7.6h5.1a4.75 4.75 0 0 1 0 9.5h-5.1" stroke="url(#bm-g2)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M16.3 17.4 22.4 24.6" stroke="url(#bm-g2)" stroke-width="2.5" stroke-linecap="round"/>
-              </svg>
-            </span>
-            <span class="brand-text"><span class="brand-name">Ram Martinez</span><span class="brand-sub">Built with purpose</span></span>
+          <a class="brand" href="#/home" aria-label="First Things First Digital Solutions — home">
+            <svg class="brand-logo" viewBox="144 296 1400 334" width="1400" height="334" aria-hidden="true">
+              <image href="assets/first-things-first.png" width="1672" height="941" preserveAspectRatio="none" filter="url(#brand-ink)"/>
+            </svg>
           </a>
           <p>A husband, father, servant, and builder — learning to put God first in everything.</p>
         </div>
