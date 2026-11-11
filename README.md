@@ -1,23 +1,25 @@
 # Ram Martinez
 
-Personal website, hosted on GitHub Pages. Plain HTML, CSS, and a small script that redirects links to the previous site's pages.
+Personal website on GitHub Pages. Static HTML, CSS, and JavaScript; no build step or package installation.
 
-Run locally:
+## Local preview
 
 ```sh
 python -m http.server 4173
 ```
 
-Open `http://localhost:4173`. There is no build step or dependency installation.
+Open `http://localhost:4173`.
 
-## Design and content
+## Visual direction
 
-- Introduce Ram in his own name. Keep faith, family, ministry, and work in their stated order.
-- Describe each project by what it does and who uses it. Avoid adding claims about results without evidence.
-- Use actual work as imagery. The two WebP screenshots were captured from the public project sites on November 11, 2026; they are static previews, not embedded live sites.
-- Keep private projects unlinked and development projects labeled.
-- Keep the First Things First logo and favicon.
-- Use ordinary links, visible focus states, and readable text. Content and navigation must work without JavaScript.
-- Keep all content available on one page. The script supports the old `#/home`, `#/get-to-know-me`, `#/work`, `#/ministry`, `#/skills`, and `#/contact` links.
+Keep the First Things First branding and the navy, cyan, blue, and violet palette. Use strong typography, considered spacing, and actual work to give the site its character. Keep personal writing specific to Ram; his priorities are God, family, ministry, then work.
 
-Update the HTML to add projects. Keep screenshots in `assets/`, including their width, height, and descriptive alternative text in the markup.
+The homepage includes a manually controlled project preview, four featured websites, an expandable project index, personal and ministry information, and a GitHub link. The theme switcher stores the visitor's choice when local storage is available. Content, project links, and the project index work without JavaScript. All six previous hash routes still lead to their corresponding sections.
+
+Motion is limited to short hover and preview changes. Respect reduced-motion preferences. Do not hide essential content behind entrance animations or loaders, or add a custom cursor.
+
+## Assets
+
+Project WebP previews are actual screenshots of public project sites, captured November 11, 2026. The Chord Formatter capture uses a short illustrative rehearsal exercise, not song lyrics. Screenshot previews are static; follow the project link to use the live app. Keep private projects unlinked and unfinished projects labeled.
+
+Inter Tight is self-hosted with Latin characters and common punctuation. Its SIL Open Font License is in `assets/Inter-Tight-OFL.txt`. The original logo and favicon are retained.
