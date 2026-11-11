@@ -1,4 +1,7 @@
-Copyright 2010-2020 Adobe (http://www.adobe.com/), with Reserved Font Name 'Source'. All Rights Reserved. Source is a trademark of Adobe in the United States and/or other countries.
+Copyright 2019 The Merriweather Project Authors (https://github.com/SorkinType/Merriweather-Sans)
+with Reserved Font Name 'Merriweather'
+
+Merriweather is a trademark of Sorkin Type Co.
 
 This Font Software is licensed under the SIL Open Font License, Version 1.1.
 
